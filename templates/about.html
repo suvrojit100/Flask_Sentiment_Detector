@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container-fluid2 about-page">
+        <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                        <img src="{{ url_for('static', filename='images/profilepic.png') }}" alt="Profile Picture"
+                                class="profile-pic img-fluid">
+                        <div class="about-content">
+                                <h1>About Me</h1>
+                                <p style="font-size: 20px;">Hello, I'm [Your Name], a passionate [Your Profession] based
+                                        in [Your Location]. I
+                                        love exploring new technologies and finding ways to solve complex problems. My
+                                        journey in the world of [Your Field] has been exciting and fulfilling, and I'm
+                                        always eager to learn and grow.</p>
+                        </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

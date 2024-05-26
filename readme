@@ -1,0 +1,3 @@
+set FLASK_APP=flaskblog.py
+$env:FLASK_APP = "flaskblog.py" Set the environment variable to point to your Flask application file:
+$env:FLASK_DEBUG = "1" dont need to start server everytime after changes
