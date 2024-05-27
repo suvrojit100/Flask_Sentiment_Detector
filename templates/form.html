@@ -2,39 +2,24 @@
 <html lang="en">
 
 <head>
-    <title>Levitating Form Example</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
 </head>
 
 <body>
-    <div class="social-media">
-        <div>
-            <a href="#" id="insta-link"><img src="{{ url_for('static', filename='icons/insta.jpg') }}"
-                    alt="Instagram"><br>
-                <span class="social-name">Instagram</span></a>
+    <h1>Processed Data</h1>
+    {% if tables %}
+    <div align="center">
+        {% for table in tables %}
+        <h2>{{ titles[loop.index] }}</h2>
+        <div class="table-responsive">
+            {{ table|safe }}
         </div>
+        {% endfor %}
     </div>
-    <div id="levitating-form" style="display: none;">
-        <form action="{{ url_for('get_instagram_comments') }}" method="post">
-            <label for="post_link">Enter the social media post link:</label><br>
-            <input type="text" id="post_link" name="post_link"><br><br>
-
-            <label for="choice">Choose an option:</label><br>
-            <select id="choice" name="choice">
-                <option value="1">Get actual comments of the post and download</option>
-                <option value="2">Get the translated version of the comments</option>
-                <option value="3">Get positive/negative/both comments</option>
-            </select><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-
-    <script>
-        document.getElementById("insta-link").addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent the default link behavior
-            document.getElementById("levitating-form").style.display = "block"; // Show the form
-        });
-    </script>
+    {% endif %}
 </body>
 
 </html>
